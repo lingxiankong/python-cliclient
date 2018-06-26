@@ -49,7 +49,7 @@ OpenStackShell 类最终继承自 cliff 中的 App。python-openstackclient 的�
    - `API_VERSION_OPTION`，比如 `os_runit_version`
    - `DEFAULT_API_VERSION`，比如 1，这个变量最好定义，否则你的 command 不会生效。最终，根据字符串拼接会注册命名空间 `openstack.runit.v1` 下的 commands
 
-3. 如果 runit 这个程序不是一个 openstack service client，就没有必要实现 `make_client` 方法。
+3. 如果 runit 这个程序不是一个 openstack service client 或者只需要引用其他 service 的 client，就没有必要实现 `make_client` 方法。
 
 4. 在 `mycli/echo.py` 文件中：
 
